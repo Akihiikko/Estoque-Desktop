@@ -1,3 +1,7 @@
+.root{
+    -fx-font-family: "Lucida Calligraphy";
+}
+
 .campos-login{
     -fx-border-color: #ffdce4;
     -fx-border-radius: 7;
@@ -17,4 +21,18 @@
 
 .botao-menu{
     -fx-background-color : transparent;
+}
+
+.botao-menu:hover {
+    -fx-background-color: #d07086;
+    -fx-opacity: 0.2;
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
+}
+.botao-estoque{
+    -fx-background-color : #d07086;
+}
+
+.tabela{
+    -fx-background-color : #ffb9c9;
 }

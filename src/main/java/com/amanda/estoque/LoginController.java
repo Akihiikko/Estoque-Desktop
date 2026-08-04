@@ -1,4 +1,4 @@
-package com.jociel.estoque;
+package com.amanda.estoque;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -22,7 +22,7 @@ public class LoginController {
     @FXML
     private TextFlow erroDados;
 
-    private final String usuarioCadastrado = "maria@gmail.com";
+    private final String usuarioCadastrado = "amanda@gmail.com";
     private final String senhaCadastrada = "010203";
 
     @FXML

@@ -1,4 +1,4 @@
-package com.jociel.estoque;
+package com.amanda.estoque;
 
 import javafx.application.Application;
 

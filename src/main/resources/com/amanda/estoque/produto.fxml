@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane prefHeight="450.0" prefWidth="700.0" styleClass="texto-principal" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jociel.estoque.controller.ProdutoController">
+    <top>
+        <VBox prefHeight="77.0" prefWidth="700.0" styleClass="tabela" BorderPane.alignment="CENTER">
+            <children>
+                <Label text="Dados do Produto">
+                    <VBox.margin>
+                        <Insets bottom="10.0" />
+                    </VBox.margin>
+                    <font>
+                        <Font name="System Bold" size="20.0" />
+                    </font>
+               <styleClass>
+                  <String fx:value="texto-principal" />
+                  <String fx:value="root" />
+                  <String fx:value="tabela" />
+               </styleClass>
+                </Label>
+            </children>
+            <padding>
+                <Insets bottom="10.0" left="80.0" right="80.0" top="30.0" />
+            </padding></VBox>
+    </top>
+    <center>
+        <VBox prefHeight="380.0" prefWidth="700.0" BorderPane.alignment="CENTER">
+            <children>
+                <VBox alignment="CENTER_LEFT" prefHeight="74.0" prefWidth="700.0" styleClass="menu">
+                    <children>
+                        <Label text="Nome">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                     <styleClass>
+                        <String fx:value="root" />
+                        <String fx:value="menu" />
+                     </styleClass>
+                        </Label>
+                        <TextField fx:id="campoNome" prefHeight="35.0" prefWidth="540.0" />
+                    </children>
+                    <padding>
+                        <Insets left="80.0" right="80.0" />
+                    </padding>
+                </VBox>
+                <VBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" prefHeight="72.0" prefWidth="700.0" styleClass="menu">
+                    <children>
+                        <Label text="Categoria">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                     <styleClass>
+                        <String fx:value="root" />
+                        <String fx:value="menu" />
+                     </styleClass>
+                        </Label>
+                        <TextField fx:id="campoCategoria" prefHeight="35.0" prefWidth="540.0" />
+                    </children>
+                    <padding>
+                        <Insets left="80.0" right="80.0" />
+                    </padding>
+                </VBox>
+                <VBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="75.0" prefHeight="75.0" prefWidth="700.0" styleClass="menu">
+                    <children>
+                        <Label text="Quantidade">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                     <styleClass>
+                        <String fx:value="root" />
+                        <String fx:value="menu" />
+                     </styleClass>
+                        </Label>
+                        <TextField fx:id="campoQuantidade" prefHeight="35.0" prefWidth="540.0" />
+                    </children>
+                    <padding>
+                        <Insets left="80.0" right="80.0" />
+                    </padding>
+                </VBox>
+                <VBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="140.0" prefWidth="700.0" styleClass="menu">
+                    <children>
+                        <Label text="Preço">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                     <styleClass>
+                        <String fx:value="root" />
+                        <String fx:value="menu" />
+                     </styleClass>
+                        </Label>
+                        <TextField fx:id="campoPreco" prefHeight="35.0" prefWidth="540.0" />
+                    </children>
+                    <padding>
+                        <Insets left="80.0" right="80.0" />
+                    </padding>
+                </VBox>
+                <HBox alignment="CENTER_RIGHT" prefHeight="87.0" prefWidth="700.0" styleClass="menu">
+                    <padding>
+                        <Insets left="80.0" right="80.0" />
+                    </padding>
+                    <children>
+                        <Button fx:id="botaoCancelar" mnemonicParsing="false" onAction="#cancelar" prefHeight="35.0" prefWidth="114.0" styleClass="botao" text="Cancelar">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                            <HBox.margin>
+                                <Insets right="20.0" />
+                            </HBox.margin>
+                        </Button>
+                        <Button fx:id="botaoSalvar" layoutX="496.0" layoutY="26.0" mnemonicParsing="false" onAction="#salvar" prefHeight="35.0" prefWidth="114.0" styleClass="botao" text="Salvar">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </Button>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </center>
+</BorderPane>

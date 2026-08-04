@@ -4,6 +4,6 @@ module com.jociel.estoque {
     requires java.desktop;
 
 
-    opens com.jociel.estoque to javafx.fxml;
-    exports com.jociel.estoque;
+    opens com.amanda.estoque to javafx.fxml;
+    exports com.amanda.estoque;
 }
