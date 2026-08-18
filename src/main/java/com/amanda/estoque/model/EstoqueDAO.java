@@ -3,44 +3,50 @@ package com.amanda.estoque.model;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
+import java.util.List;
+
 public class EstoqueDAO {
 
     private static EstoqueDAO instancia;
-    private final ObservableList<Produto> listaProdutos;
+    private final ObservableList<Produto> produtosList;
     private int idProduto = 1;
 
 
-    private EstoqueDAO() {
-        this.listaProdutos = FXCollections.observableArrayList();
+    private EstoqueDAO(){
+        this.produtosList = FXCollections.observableArrayList();
     }
 
 
-    public static EstoqueDAO getInstancia() {
-        if (instancia == null) {
+    public static EstoqueDAO getInstancia(){
+        if ( instancia == null){
             instancia = new EstoqueDAO();
         }
         return instancia;
     }
 
-    public void adicionar(Produto produto) {
+    public void adicionar(Produto produto){
         produto.setId(idProduto++);
-        listaProdutos.add(produto);
+        produtosList.add(produto);
     }
 
-    public ObservableList<Produto> listarProdutos() {
-        return listaProdutos;
+    public ObservableList<Produto> listarProdutos(){
+        return produtosList;
     }
 
-    public void remover(Produto produto) {
-        listaProdutos.remove(produto);
+    public void remover(List<Produto> listarProdutos){
+        produtosList.removeAll(listarProdutos);
     }
 
-    public double calcularValorTotalEstoque() {
-        double valorTotalEstoque = produtosList.stream().mapToDouble(Produto::getValorTotal).sum;
+
+    public double calcularValorTotalEstoque(){
+        return produtosList.stream().mapToDouble(Produto::getValorTotal).sum();
     }
 
     public long calcularEstoqueBaixo(int limite){
-        return produtosList.stream().filter(Produto p -> p.getQuantidade() < limite).count();
-    }
-}
+        return  produtosList.stream().filter( p -> p.getQuantidade() < limite).count();
 
+    }
+
+
+
+}

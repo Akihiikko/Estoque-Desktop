@@ -1,14 +1,17 @@
-package com.amanda.estoque;
+package com.amanda.estoque.Controller;
 
 import com.amanda.estoque.model.EstoqueDAO;
-import com.amanda.estoque.model.Produto;
+import com.amanda.estoque.util.GerenciadorTela;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
+import java.io.IOException;
 import java.text.NumberFormat;
 import java.util.Locale;
 
 public class RelatorioController {
+
     @FXML
     private Label lblTotalProdutos;
 
@@ -21,9 +24,9 @@ public class RelatorioController {
     private final EstoqueDAO dadosEstoque = EstoqueDAO.getInstancia();
 
     @FXML
-    public void initialize(){
+    public  void initialize(){
 
-        NumberFormat formatoMoeda = NumberFormat.getCurrencyInstance(new Locale("pt","BR"));
+        NumberFormat formatoMoeda = NumberFormat.getCurrencyInstance(new Locale("pt", "BR"));
 
         int totalProdutos = dadosEstoque.listarProdutos().size();
         lblTotalProdutos.setText(String.valueOf(totalProdutos));
@@ -34,11 +37,20 @@ public class RelatorioController {
         long estoqueBaixo = dadosEstoque.calcularEstoqueBaixo(10);
         lblEstoqueBaixo.setText(String.valueOf(estoqueBaixo));
 
-        // Conversao de tipos
 
-        // Inteiro ou Double para String -> String.valueOf(numero)
-        // String dou Double para Inteiro -> Interger.parseInt(string)
-        // Inteiro ou String para double -> Double.parseDouble(`8.5`)
-        // String para boolean -> Bollean.parseBoolean("true")
-  }
+        // Conversao de tipos
+        // Inteiro ou Double  para String ->  String.valueOf( 1 ) saída -> "1"
+        // String ou Double ara inteiro -> Integer.parseInt( "1" ) saída -> 1
+        // Inteiro ou String para double ->  Double.parseDouble( "8.5" ) -> saída 8.5
+        // String para boolean ->  Boolean.parseBoolean( "true" ) -> saída true
+
+
+    }
+
+
+    @FXML
+    protected void aoVoltarAoMenu(ActionEvent event) throws IOException {
+        GerenciadorTela.getInstancia().trocarTela(event, "menu.fxml", "Sistema de Estoque - Menu");
+    }
+
 }

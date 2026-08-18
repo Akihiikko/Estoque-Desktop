@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane prefHeight="450.0" prefWidth="700.0" styleClass="tabela" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.amanda.estoque.EstoqueController">
+<BorderPane prefHeight="450.0" prefWidth="700.0" styleClass="tabela" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.amanda.estoque.Controller.EstoqueController">
    <top>
       <VBox prefHeight="117.0" prefWidth="700.0" styleClass="tabela" stylesheets="@style.css" BorderPane.alignment="CENTER">
          <children>

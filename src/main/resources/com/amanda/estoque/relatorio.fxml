@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox alignment="TOP_CENTER" prefHeight="450.0" prefWidth="700.0" styleClass="tabela" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jociel.estoque.controller.RelatorioController">
+<VBox alignment="TOP_CENTER" prefHeight="450.0" prefWidth="700.0" styleClass="tabela" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.amanda.estoque.Controller.RelatorioController">
     <children>
         <Label text="Relatório de Produtos no Estoque">
             <font>

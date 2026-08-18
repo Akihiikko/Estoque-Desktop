@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane prefHeight="450.0" prefWidth="700.0" styleClass="texto-principal" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jociel.estoque.controller.ProdutoController">
+<BorderPane prefHeight="450.0" prefWidth="700.0" styleClass="texto-principal" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.amanda.estoque.Controller.ProdutoController">
     <top>
         <VBox prefHeight="77.0" prefWidth="700.0" styleClass="tabela" BorderPane.alignment="CENTER">
             <children>
