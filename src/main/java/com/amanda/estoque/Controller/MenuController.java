@@ -13,7 +13,7 @@ public class MenuController {
     }
 
     @FXML
-    protected void  aoCadastrarProduto(ActionEvent event) throws IOException {
+    protected void  aoAdicionarProduto(ActionEvent event) throws IOException {
         GerenciadorTela.getInstancia().trocarTela(event, "produto.fxml", "Sistema de Estoque - Produto");
     }
 

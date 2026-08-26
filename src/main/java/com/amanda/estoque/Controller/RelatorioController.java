@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.text.NumberFormat;
 import java.util.Locale;
 
@@ -21,10 +22,10 @@ public class RelatorioController {
     @FXML
     private Label lblEstoqueBaixo;
 
-    private final EstoqueDAO dadosEstoque = EstoqueDAO.getInstancia();
+    private final EstoqueDAO dadosEstoque = new EstoqueDAO();
 
     @FXML
-    public  void initialize(){
+    public  void initialize() throws SQLException {
 
         NumberFormat formatoMoeda = NumberFormat.getCurrencyInstance(new Locale("pt", "BR"));
 
@@ -52,5 +53,4 @@ public class RelatorioController {
     protected void aoVoltarAoMenu(ActionEvent event) throws IOException {
         GerenciadorTela.getInstancia().trocarTela(event, "menu.fxml", "Sistema de Estoque - Menu");
     }
-
 }

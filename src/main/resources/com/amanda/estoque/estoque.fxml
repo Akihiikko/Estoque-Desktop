@@ -19,22 +19,22 @@
             </Label>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" stylesheets="@style.css">
                <children>
-                  <TextField prefHeight="27.0" prefWidth="239.0" promptText="Digite o ID do produto" styleClass="campos-login" stylesheets="@style.css">
+                  <TextField fx:id="campoBusca" prefHeight="27.0" prefWidth="239.0" promptText="Digite o ID do produto" styleClass="campos-login" stylesheets="@style.css">
                      <HBox.margin>
                         <Insets right="10.0" />
                      </HBox.margin>
                   </TextField>
-                  <Button fx:id="adicionar" mnemonicParsing="false" styleClass="menu" stylesheets="@style.css" text="+ Adicionar">
+                  <Button fx:id="btnAdicionarProduto" mnemonicParsing="false" onAction="#adicionarProduto" styleClass="menu" stylesheets="@style.css" text="+ Adicionar">
                      <HBox.margin>
                         <Insets right="10.0" />
                      </HBox.margin>
                   </Button>
-                  <Button layoutX="159.0" layoutY="10.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="69.0" styleClass="menu" stylesheets="@style.css" text="Editar">
+                  <Button fx:id="btnEditar" layoutX="159.0" layoutY="10.0" mnemonicParsing="false" onAction="#editarProduto" prefHeight="25.0" prefWidth="69.0" styleClass="menu" stylesheets="@style.css" text="Editar">
                      <HBox.margin>
                         <Insets right="10.0" />
                      </HBox.margin>
                   </Button>
-                  <Button layoutX="211.0" layoutY="10.0" mnemonicParsing="false" styleClass="menu" text="- Remover">
+                  <Button fx:id="btnRemoverProduto" layoutX="211.0" layoutY="10.0" mnemonicParsing="false" onAction="#removerProduto" styleClass="menu" text="- Remover">
                      <HBox.margin>
                         <Insets right="10.0" />
                      </HBox.margin>
@@ -52,13 +52,13 @@
       </VBox>
    </top>
    <center>
-      <TableView prefHeight="326.0" prefWidth="644.0" styleClass="menu" stylesheets="@style.css" BorderPane.alignment="CENTER">
+      <TableView fx:id="tabelaProdutos" prefHeight="326.0" prefWidth="644.0" styleClass="tabela" stylesheets="@style.css" BorderPane.alignment="CENTER">
         <columns>
-          <TableColumn prefWidth="75.0" text="ID" />
-          <TableColumn prefWidth="186.0" text="Nome" />
-            <TableColumn prefWidth="130.0" text="Categoria" />
-            <TableColumn minWidth="0.0" prefWidth="116.0" text="Quantidade" />
-            <TableColumn prefWidth="132.0" text="Preço (R$)" />
+          <TableColumn fx:id="colunaId" prefWidth="75.0" text="ID"/>
+          <TableColumn fx:id="colunaNome" prefWidth="186.0" text="Nome" />
+            <TableColumn fx:id="colunaCategoria" prefWidth="130.0" text="Categoria" />
+            <TableColumn fx:id="colunaQuantidade" minWidth="0.0" prefWidth="116.0" text="Quantidade" />
+            <TableColumn fx:id="colunaPreco" prefWidth="132.0" text="Preço (R$)" />
         </columns>
          <BorderPane.margin>
             <Insets bottom="15.0" left="30.0" right="30.0" />

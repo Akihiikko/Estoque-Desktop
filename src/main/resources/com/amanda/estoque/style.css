@@ -36,3 +36,10 @@
 .tabela{
     -fx-background-color : #ffb9c9;
 }
+.codigo-gerado:hover{
+    -fx-text-fill: #d07086;
+
+}
+.codigo-gerado{
+    -fx-text-fill: #ffedf2;
+}

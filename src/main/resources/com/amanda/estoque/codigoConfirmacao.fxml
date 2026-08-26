@@ -5,10 +5,11 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox alignment="CENTER" prefHeight="300.0" prefWidth="400.0" styleClass="menu" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CONTROLLER_NAME">
+<VBox alignment="CENTER" prefHeight="300.0" prefWidth="400.0" styleClass="menu" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.amanda.estoque.Controller.CodigoConfirmacaoController">
     <children>
         <Label styleClass="titulo-recuperacao" text="Recuperação de Senha" />
-        <Label fx:id="codigoRecuperacao" alignment="CENTER" layoutX="40.0" layoutY="94.0" prefHeight="26.0" prefWidth="141.0" styleClass="codigo-gerado" text="000000" textAlignment="CENTER" textFill="#ffedf2" wrapText="true">
+        <Label fx:id="codigoRecuperacao" alignment="CENTER" layoutX="40.0" layoutY="94.0" prefHeight="26.0" prefWidth="141.0" styleClass="codigo-gerado" text="000000" textAlignment="CENTER" textFill="#ffedf2"
+               wrapText="true">
             <font>
                 <Font size="16.0" />
             </font>
