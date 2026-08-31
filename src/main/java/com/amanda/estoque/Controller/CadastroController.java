@@ -35,24 +35,20 @@ public class CadastroController {
     @FXML
     private TextFlow erroSenha;
 
-    private static UsuarioDAO dbUsuario = UsuarioDAO.getInstancia();
-
+    private static UsuarioDAO dbUsuario = new UsuarioDAO();
     @FXML
     protected  void aoConfirmarCadastro(ActionEvent event) throws IOException {
 
         String usuario =  usuarioCadastrar.getText();
 
-        String regexEmail = "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}$";
-
-        String regexSenha = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@#$%^&+=]).{6,}$";
-
-        if(usuario.isBlank() || !usuario.matches(Constantes.REGEX_EMAIL.getValor())){
+        if( usuario.isBlank() || !usuario.matches(Constantes.REGEX_EMAIL.getValor()) ){
             usuarioInvalido.setVisible(true);
             return;
         }
 
         String senha =  senhaCadastrar.getText();
         if(senha.isBlank() || !senha.matches(Constantes.REGEX_SENHA.getValor())){
+            senhaInvalida.setText("Utilize uma senha mais segura");
             senhaInvalida.setVisible(true);
             return;
         }
@@ -63,6 +59,12 @@ public class CadastroController {
             return;
         }
         Usuario novoUsuario =  new Usuario(usuario, senha);
+
+        if(dbUsuario.buscarPorEmail(usuario).isPresent()){
+            usuarioInvalido.setText("Usuário já cadastrado!");
+            usuarioInvalido.setVisible(true);
+            return;
+        }
         dbUsuario.cadastrarUsuario(novoUsuario);
 
         GerenciadorTela.getInstancia().trocarTela(event, "login.fxml", "Sistema de Estoque - Login");

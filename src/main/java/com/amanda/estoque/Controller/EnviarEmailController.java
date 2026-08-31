@@ -24,20 +24,19 @@ public class EnviarEmailController {
 
 
     private final RecuperacaoSenhaService service = new RecuperacaoSenhaService();
-    private final UsuarioDAO baseUsuario = UsuarioDAO.getInstancia();
 
     @FXML
     protected void aoValidarEmail() throws IOException {
         String email = emailRecuperacao.getText().trim();
 
-        String codigo = service.solicitarRecuperacao(email, baseUsuario);
+        String codigo = service.solicitarRecuperacao(email);
 
         if (codigo == null) {
             emailNaoCadastrado.setVisible(true);
             return;
         }
 
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/amanda/estoque/codigoConfirmacao.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/amanda/estoque/CodigoConfirmacao.fxml"));
         Parent root = fxmlLoader.load();
 
         CodigoConfirmacaoController controller = fxmlLoader.getController();
@@ -45,7 +44,7 @@ public class EnviarEmailController {
 
         Scene scene = new Scene(root);
         Stage stage = (Stage) emailRecuperacao.getScene().getWindow();
-        stage.setTitle("Código Confirmacao");
+        stage.setTitle("Código Confirmação");
         stage.setScene(scene);
         stage.show();
     }

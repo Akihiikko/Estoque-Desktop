@@ -2,20 +2,22 @@ package com.amanda.estoque.service;
 
 import com.amanda.estoque.model.Usuario;
 import com.amanda.estoque.model.UsuarioDAO;
+import org.mindrot.jbcrypt.BCrypt;
 
 import java.util.Optional;
 import java.util.Random;
 
 public class RecuperacaoSenhaService {
-
-
     private Usuario usuarioAlvo;
 
     private  String codigoGerado;
+    private UsuarioDAO usuarioDAO = new UsuarioDAO();
 
-    public String solicitarRecuperacao(String email, UsuarioDAO baseUsuario){
+    public  RecuperacaoSenhaService(){}
 
-        Optional<Usuario> usuarioEncontrado = baseUsuario.buscarPorEmail(email);
+    public String solicitarRecuperacao(String email){
+
+        Optional<Usuario> usuarioEncontrado = usuarioDAO.buscarPorEmail(email);
         if( usuarioEncontrado.isEmpty()) {
             return  null;
         }
@@ -31,17 +33,25 @@ public class RecuperacaoSenhaService {
         return String.valueOf(codigo);
     }
 
-    public boolean validarCodigo(String codigoDigitado){
+    public boolean validarCodigo( String codigoDigitado){
         return  codigoGerado != null &&  usuarioAlvo != null && codigoGerado.equals(codigoDigitado);
     }
 
-    public boolean redefinirSenha(String novaSenha){
+    public boolean redefinirSenha( String novaSenha){
         if( usuarioAlvo == null){
             return false;
         }
-        usuarioAlvo.setSenha(novaSenha);
+        usuarioDAO.atualizarSenha(usuarioAlvo.getId(), novaSenha);
         encerrarFluxo();
         return true;
+    }
+
+    public boolean verificarSenhaAntiga(String novaSenha){
+        if( usuarioAlvo == null){
+            return  false;
+        }
+
+        return  BCrypt.checkpw(novaSenha, usuarioAlvo.getSenha());
     }
 
     public void encerrarFluxo(){
@@ -49,8 +59,5 @@ public class RecuperacaoSenhaService {
         this.codigoGerado = null;
     }
 
-    public  Usuario getUsuarioAlvo(){
-        return usuarioAlvo;
-    }
 
 }

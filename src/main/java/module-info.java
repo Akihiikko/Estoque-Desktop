@@ -5,6 +5,7 @@ module com.amanda.estoque {
     requires org.kordamp.ikonli.javafx;
     requires org.kordamp.ikonli.materialdesign2;
     requires java.sql;
+    requires jbcrypt;
 
 
     opens com.amanda.estoque to javafx.fxml;
