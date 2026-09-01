@@ -5,8 +5,8 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
+<?import org.kordamp.ikonli.javafx.*?>
 
-<?import org.kordamp.ikonli.javafx.FontIcon?>
 <VBox alignment="CENTER" prefHeight="450.0" prefWidth="700.0" spacing="20.0" style="-fx-background-color: #ffedf2; -fx-border-color: #ffdce4; -fx-border-width: 2;" styleClass="menu" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.amanda.estoque.Controller.LoginController">
     <padding>
         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
@@ -31,14 +31,14 @@
             <Font name="Gill Sans MT" size="16.0" />
         </font>
     </TextField>
-    <StackPane prefHeight="150.0" prefWidth="200.0">
+    <StackPane prefHeight="81.0" prefWidth="516.0">
         <children>
-            <PasswordField fx:id="senha" minHeight="44.0" onAction="#aoApertarBotao" prefHeight="44.0" prefWidth="460.0" promptText="Informe sua senha" styleClass="campos-login">
+            <PasswordField fx:id="senha" minHeight="39.0" onAction="#aoApertarBotao" prefHeight="44.0" prefWidth="516.0" promptText="Informe sua senha" styleClass="campos-login">
                 <font>
                     <Font name="Gill Sans MT" size="16.0" />
                 </font>
             </PasswordField>
-            <TextField fx:id="senhaVisivel" minHeight="44.0" prefHeight="44.0" prefWidth="535.0" promptText="Informe sua senha " styleClass="campos-login" managed="false">
+            <TextField fx:id="senhaVisivel" managed="false" minHeight="44.0" prefHeight="44.0" prefWidth="535.0" promptText="Informe sua senha " styleClass="campos-login">
                 <font>
                     <Font name="Gill Sans MT" size="16.0" />
                 </font>
@@ -72,7 +72,7 @@
         <VBox.margin>
             <Insets top="-40.0" />
         </VBox.margin></Button>
-    <Label fx:id="recuperaSenha" onMouseClicked="#aoEsquecerSenha" text="Esqueceu sua senha. Recupere aqui!" textFill="#d07086" translateY="-10.0" underline="true">
+    <Label fx:id="recuperaSenha" onMouseClicked="#aoEsquecerSenha" text="Esqueceu sua senha? Recupere aqui!" textFill="#d07086" translateY="-10.0" underline="true">
         <font>
             <Font name="Gill Sans MT Italic" size="16.0" />
         </font>
